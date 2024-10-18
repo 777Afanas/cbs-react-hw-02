@@ -2,13 +2,15 @@ import Profile from '../Profile/Profile';
 import userData from '../../data/userData.json';
 import FriendList from '../FriendList/FriendList';
 import friends from '../../data/friends.json';
-import './App.css'
+import TransactionHistory from '../TransactionHistory/TransactionHistory';
+import transactions from '../../data/transactions.json';
+// import css from './App.module.css'
 
-export default function App() {
-  
+
+export default function App() {   
 
   return (
-    <>
+    <div>
       <Profile
         name={userData.username}
         tag={userData.tag}
@@ -16,9 +18,9 @@ export default function App() {
         image={userData.avatar}
         stats={userData.stats}
       />
-      <FriendList friends={friends}/>
-
-    </>
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} /> 
+    </div>
   )
 }
 
